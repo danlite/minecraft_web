@@ -34,13 +34,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :test do
-  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development, :test do
   gem 'byebug'
+  gem 'factory_girl_rails'
 end
 
 group :development do
