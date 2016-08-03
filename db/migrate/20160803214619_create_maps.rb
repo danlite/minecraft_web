@@ -7,7 +7,7 @@ class CreateMaps < ActiveRecord::Migration
       t.integer :height
       t.integer :width
       t.integer :center_x
-      t.integer :center_y
+      t.integer :center_z
       t.string :image
 
       t.timestamps null: false

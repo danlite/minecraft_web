@@ -6,7 +6,7 @@ FactoryGirl.define do
     height 1
     width 1
     center_x 1
-    center_y 1
+    center_z 1
   end
 
 end

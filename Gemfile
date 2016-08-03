@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 
+gem 'rmagick'
+
 group :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers', '~> 3.1'
