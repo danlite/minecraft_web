@@ -37,6 +37,8 @@ gem 'carrierwave'
 
 gem 'rmagick'
 
+gem 'react_on_rails', '~> 5'
+
 group :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers', '~> 3.1'
