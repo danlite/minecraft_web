@@ -51,4 +51,14 @@ class Map < ActiveRecord::Base
 
     map
   end
+
+  def self.max_edge(axis)
+    dimension = axis.to_s == 'x' ? 'width' : 'height'
+    maximum("#{table_name}.center_#{axis} + #{table_name}.#{dimension} / 2 * power(2, #{table_name}.scale)")
+  end
+
+  def self.min_edge(axis)
+    dimension = axis.to_s == 'x' ? 'width' : 'height'
+    minimum("#{table_name}.center_#{axis} - #{table_name}.#{dimension} / 2 * power(2, #{table_name}.scale)")
+  end
 end
