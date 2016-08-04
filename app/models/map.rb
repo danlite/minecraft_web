@@ -36,7 +36,11 @@ class Map < ActiveRecord::Base
       end
     end
 
-    gc.draw canvas
+    begin
+      gc.draw canvas
+    rescue => e
+      puts e
+    end
 
     NamedTempfile.open_tempfile('map.png', 'wb+') do |file|
       canvas.write file.path
