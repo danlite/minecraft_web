@@ -1,0 +1,5 @@
+<%= react_component("MinecraftApp",
+                     props: {
+                      maps: @maps.map{ |map| map.as_json }
+                     },
+                     prerender: false) %>
