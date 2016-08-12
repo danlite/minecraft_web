@@ -4,10 +4,11 @@ class Map < ActiveRecord::Base
 
   mount_uploader :image, MapUploader
 
-  def self.create_from_data_file(io)
+  def self.create_from_data_file(io, map_id)
     data = NBTFile.load(io).last['data']
 
-    map = Map.new(
+    map = Map.find_or_initialize_by(
+      :map_id => map_id,
       :width => data['width'],
       :height => data['height'],
       :center_x => data['xCenter'],

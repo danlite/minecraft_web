@@ -21,5 +21,9 @@
 //
 // require jquery
 // require jquery_ujs
-//= require turbolinks
 // require_tree .
+
+// require turbolinks
+
+// bootstrap-sprockets depends on vendor-bundle for jQuery.
+//= require bootstrap-sprockets

@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: minecraft_web_production
-  username: minecraft_web
+  username: minecraft
   password: <%= ENV['MINECRAFT_WEB_DATABASE_PASSWORD'] %>

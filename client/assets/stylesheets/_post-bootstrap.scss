@@ -1,0 +1,27 @@
+// The Rails server imports this file via app/assets/stylesheets/application.css.scss
+// The webpack HMR dev server loads this file via client/bootstrap-sass.config.js
+
+// In either case, this file is loaded AFTER bootstrap has been loaded.
+// This is where you can add your own styles and override bootstrap styles
+// utilizing bootstrap variables and mixins.
+
+.maps-container {
+  position: relative;
+
+  .map {
+    position: absolute;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .poi {
+    position: absolute;
+    z-index: 10;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f00;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
