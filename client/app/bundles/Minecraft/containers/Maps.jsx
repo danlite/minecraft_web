@@ -75,6 +75,7 @@ const Maps = ({ $$maps, pois }) => {
     )}
     {pois.map(poi => (
       <div  className="poi"
+            key={`${poi.x}_${poi.z}`}
             style={{
               top: poi.z - minimumZ,
               left: poi.x - minimumX
