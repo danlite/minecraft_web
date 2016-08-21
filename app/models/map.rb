@@ -4,7 +4,7 @@ class Map < ActiveRecord::Base
 
   mount_uploader :image, MapUploader
 
-  def self.create_from_data_file(io, map_id)
+  def self.create_or_update_from_data_file(io, map_id)
     data = NBTFile.load(io).last['data']
 
     map = Map.find_or_initialize_by(
