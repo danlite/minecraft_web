@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.6'
+ruby '2.3.0'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -13,6 +13,7 @@ gem 'font-awesome-sass'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'react_on_rails', '~> 5'
+gem 'unicorn'
 
 gem 'carrierwave'
 gem 'rmagick'
