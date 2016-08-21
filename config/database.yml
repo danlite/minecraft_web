@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  host: db
   database: minecraft_web_production
-  username: minecraft
-  password: <%= ENV['MINECRAFT_WEB_DATABASE_PASSWORD'] %>
+  username: postgres
+  password:

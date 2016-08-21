@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    image: postgres
+  web:
+    image: danlite/minecraft_web
+    volumes:
+      - /app
+    ports:
+      - '80:80'
+    depends_on:
+      - db
+    environment:
+      - SECRET_KEY_BASE=somesupersecretkey
+
