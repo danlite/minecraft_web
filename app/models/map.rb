@@ -1,6 +1,6 @@
 class Map < ActiveRecord::Base
-  require 'NBTFile'
-  require 'NBTFile/map'
+  require 'nbtfile'
+  require 'nbtfile/map'
 
   mount_uploader :image, MapUploader
 
