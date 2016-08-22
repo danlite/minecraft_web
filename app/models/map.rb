@@ -1,6 +1,7 @@
 class Map < ActiveRecord::Base
   require 'nbtfile'
   require 'nbtfile/map'
+  require 'RMagick'
 
   mount_uploader :image, MapUploader
 

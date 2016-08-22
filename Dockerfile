@@ -15,12 +15,28 @@ RUN apt-get install -y pkg-config
 RUN apt-get install -y libxml2-dev libxslt1-dev
 
 #(required) Install Rails App
+WORKDIR /tmp
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
 ADD Gemfile /app/Gemfile
 ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle install --without development test
+
+COPY package.json package.json
+COPY client/package.json client/package.json
+
+RUN cd /tmp && npm install
+RUN cd /tmp/client && npm install
+
+WORKDIR /app
+RUN bundle install --without development test
+
 ADD . /app
-RUN cd /app/client && npm install
+WORKDIR /app
+RUN cp -R /tmp/node_modules /app/node_modules && \
+    cp -R /tmp/client/node_modules /app/client/node_modules
+RUN cd client && npm install
 
 #(required) nginx port number
 EXPOSE 80

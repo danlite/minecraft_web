@@ -3,6 +3,7 @@ services:
   db:
     image: postgres
   web:
+    build: .
     image: danlite/minecraft_web
     volumes:
       - /app
